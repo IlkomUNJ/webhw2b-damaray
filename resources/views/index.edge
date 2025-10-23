@@ -1,0 +1,37 @@
+@layout('layout')
+
+@section('title')
+202space - Services
+@endsection
+
+@section('content')
+<section class="services_section">
+  <h2>Pilih Jasa Foto</h2>
+
+  @if(flashMessages.get('error'))
+    <div class="flash flash-error">{{ flashMessages.get('error') }}</div>
+  @endif
+  @if(flashMessages.get('success'))
+    <div class="flash flash-success">{{ flashMessages.get('success') }}</div>
+  @endif
+
+  <form method="GET" action="/">
+    <input type="text" name="q" placeholder="Cari jasa..." value="{{ query }}">
+    <button type="submit">Cari</button>
+    <a href="/cart">Lihat Keranjang 🛒</a>
+  </form>
+
+  <div class="service_grid">
+    @each(service in services)
+    <div class="service_item">
+      <h3>{{ service.title }}</h3>
+      <p>{{ service.formattedPrice }}</p>
+      <form method="POST" action="/cart/add">
+        <input type="hidden" name="service" value="{{ service.id }}">
+        <button type="submit">Tambah ke Keranjang</button>
+      </form>
+    </div>
+  @endeach
+  </div>
+</section>
+@endsection

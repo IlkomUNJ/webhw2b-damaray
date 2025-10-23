@@ -1,0 +1,39 @@
+@layout('layout')
+
+@section('title')Keranjang@endsection
+
+@section('content')
+<section class="cart_section">
+  <h2>Keranjang Saya</h2>
+
+  @if(cart.length === 0)
+    <p><em>Keranjang kosong.</em></p>
+    <a href="/">Kembali</a>
+  @else
+    <table>
+      <tr><th>#</th><th>Jasa</th><th>Harga</th><th>Aksi</th></tr>
+      @each(cart, item, i)
+        <tr>
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.title }}</td>
+          <td>{{ item.formattedPrice }}</td>
+          <td>
+            <form method="POST" action="/cart/remove">
+              <input type="hidden" name="index" value="{{ i }}">
+              <button type="submit">Hapus</button>
+            </form>
+          </td>
+        </tr>
+      @endeach
+      <tr>
+        <td colspan="2"><strong>Total</strong></td>
+        <td colspan="2"><strong>{{ total }}</strong></td>
+      </tr>
+    </table>
+
+    <form method="POST" action="/cart/clear">
+      <button type="submit">Kosongkan Keranjang</button>
+    </form>
+  @endif
+</section>
+@endsection

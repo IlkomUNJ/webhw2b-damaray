@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>202space - Jasa Fotografi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+  <div class="border_atas">
+    <div class="logo">
+      <img src="logoo.png" alt="202 Logo" class="logo_img">
+    </div>
+      <div class="menu">
+        <a href="index.html" class="Home">Home</a>
+        <a href="about.html" class="About">About</a>
+        <a href="portofolio.html" class="Portofolio">Portofolio</a>
+        <a href="#contact" class="Contact">Contact</a>
+  </div>
+</div>
+
+<div class="search_cart_container">
+  <input type="text" id="searchInput" placeholder="Cari jasa fotografi..." onkeyup="searchServices()">
+  
+  <select id="serviceSelect">
+    <option value="">Pilih Jasa</option>
+    <option value="Wedding">Wedding</option>
+    <option value="Portrait">Portrait</option>
+    <option value="Event Documentation">Event Documentation</option>
+    <option value="Product Photography">Product Photography</option>
+    <option value="Graduation">Graduation</option>
+  </select>
+
+  <button onclick="addToCart()">Tambah ke Keranjang</button>
+  <button onclick="toggleCart()">Lihat Keranjang 🛒</button>
+</div>
+
+<!-- KERANJANG -->
+<div id="cartContainer" class="cart_popup">
+  <h3>Keranjang Saya</h3>
+  <ul id="cartList"></ul>
+  <button onclick="clearCart()">Kosongkan Keranjang</button>
+</div>
+
+  <!-- ABOUT SECTION -->
+<section id="about" class="about_section">
+  <div class="about_container">
+    <h2>About Us</h2>
+    <div class="about_section">
+      <p>
+        202space was born out of a love for the art of photography and a dedication to capturing every precious moment authentically. Photography is seen as more than just an image, but also about capturing emotions, stories, and priceless details.
+      </p>
+      <p>
+        Every client has a unique story that deserves to be portrayed with passion. With the support of experienced photographers, professional equipment, and a creative touch, every photograph is guaranteed to have both aesthetic value and personal meaning.
+      </p>
+      <p>
+        Through 202space, every important moment, such as a wedding, special event, or personal portrait, can be immortalized in a modern and story-filled way. Each piece is a tangible testament to the trust placed in us, as well as our commitment to providing warm and high-quality photography services.
+      </p>
+    </div>
+</section>
+
+
+<footer id="contact">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h2>202<span style="color:#00b894;">space</span></h2>
+      <p>The most trusted and complete<br>photography services in Jakarta</p>
+    </div>
+    <div class="footer-links">
+      <h4>LEARN MORE</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <h4>SOCIAL</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/damrryan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>CONTACT</h4>
+      <p>
+         Rawamangun, Jakarta
+         </p>
+      <p>Email: 202space@gmail.com<br>
+         Phone: +62 812 9673 3866</p>
+    </div>
+  </div>
+</footer>
